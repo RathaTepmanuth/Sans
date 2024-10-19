@@ -1,0 +1,31 @@
+local sfx = Instance.new("Part",workspace) 
+sfx.Transparency = 1
+sfx.Anchored = true
+sfx.Size = Vector3.new(4,6,6) 
+sfx.BrickColor = BrickColor.new("White") 
+local ms = Instance.new("SpecialMesh",sfx)
+ms.Scale = Vector3.new(1.75,1.75,1.75)
+ms.MeshId = "rbxassetid://4601920280"
+sfx.CFrame = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,2.45,3)
+sfx.CanCollide = false
+for i=1,10 do sfx.Transparency -= 0.1 sfx.CFrame = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(math.pi * 0,2.45,-5) task.wait()
+    end
+    delay(0.35, function()
+   local sfo = Instance.new("Part",sfx)
+   sfo.Anchored = true
+   sfo.Shape = "Cylinder"
+   sfo.BrickColor = BrickColor.new("Cyan")
+   sfo.CFrame = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(math.pi * 0,-0.45,-39.5)
+   sfo.Material = Enum.Material.Neon 
+   sfo.Transparency = 1
+   sfo.Size = Vector3.new(7.25,7.25,75)
+   local lolo = Instance.new("SpecialMesh",sfo)
+   lolo.MeshType = "Sphere"
+   task.wait(0.15)
+   for i=1,6 do sfo.Transparency -= 0.1 sfx.CFrame = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(math.pi * 0,2.45,-5) task.wait()   end  task.wait(.5) sfo:Destroy()
+    end)
+   delay(0.75, function()
+    for i=1,10 do sfx.Transparency += 0.1  task.wait()
+    end sfx:Destroy()
+Anim:Stop()
+end)
