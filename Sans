@@ -4296,6 +4296,24 @@ spawn(function()
         end
     end
 end);
+if Sea2 then
+    v16.Raid:AddButton({
+        Title = "fly to attack raid",
+        Description = "",
+        Callback = function()
+            Tween2(CFrame.new(- 6438.73535, 250.645355, - 4501.50684));
+        end
+    });
+elseif Sea3 then
+    v16.Raid:AddButton({
+        Title = "fly to attack raid",
+        Description = "",
+        Callback = function()
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance", Vector3.new(- 5075.50927734375, 314.5155029296875, - 3150.0224609375));
+            Tween2(CFrame.new(- 5017.40869, 314.844055, - 2823.0127, - 0.925743818, 4.482175e-8, - 0.378151238, 4.5550315e-9, 1, 1.0737756e-7, 0.378151238, 9.768162e-8, - 0.925743818));
+        end
+    });
+end
 
 local v56 = v16.Raid:AddSection("kill Law");
 local v143 = v16.Raid:AddToggle("ToggleLaw", {
