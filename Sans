@@ -4238,8 +4238,9 @@ spawn(function()
         end);
     end
 end);
+
 local v140 = v16.Raid:AddToggle("ToggleNextIsland", {
-    Title = "Next island",
+    Title = "auto farm raid",
     Description = "",
     Default = false
 });
@@ -4295,24 +4296,7 @@ spawn(function()
         end
     end
 end);
-local v141 = v16.Raid:AddToggle("ToggleAwake", {
-    Title = "Auto awake",
-    Description = "",
-    Default = false
-});
-v141:OnChanged(function(v358)
-    AutoAwakenAbilities = v358;
-end);
-v17.ToggleAwake:SetValue(false);
-spawn(function()
-    while task.wait() do
-        if AutoAwakenAbilities then
-            pcall(function()
-                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Awakener", "Awaken");
-            end);
-        end
-    end
-end);
+
 local v56 = v16.Raid:AddSection("kill Law");
 local v143 = v16.Raid:AddToggle("ToggleLaw", {
     Title = "buy Chip Law",
@@ -5183,7 +5167,7 @@ v16.Misc:AddButton({
         game.Players.localPlayer.PlayerGui.Main.Titles.Visible = true;
     end
 });
-local v56 = v16.Misc:AddSection("Khác");
+local v56 = v16.Misc:AddSection("Rejoin");
 local v151 = v16.Misc:AddToggle("ToggleRejoin", {
     Title = "Rejoin server",
     Description = "",
